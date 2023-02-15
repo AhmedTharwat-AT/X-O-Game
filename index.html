@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>X/O Game</title>
+    <script defer src="./js/main.js"></script>
+  </head>
+  <body>
+    <div class="modal hidden">
+      <h1>Round Over</h1>
+      <p></p>
+      <div class="modal-btn btn">Next Round</div>
+    </div>
+    <div class="shapes">
+      <div class="shape shape-1">O</div>
+      <div class="shape shape-2">O</div>
+      <div class="shape shape-3">O</div>
+      <div class="shape shape-4">X</div>
+      <div class="shape shape-5">X</div>
+    </div>
+    <div class="new-game">
+      <div class="new-game--container">
+        <h1></h1>
+        <div class="new-game--goal">
+          <label for="goal">ROUNDS</label>
+          <input id="goal" type="number" value="1" min="1" max="5" />
+        </div>
+        <div class="start btn">START</div>
+      </div>
+    </div>
+    <div class="main overlay">
+      <div class="scores">
+        <div class="score-1">X : 0</div>
+        <div class="score-2">O : 0</div>
+      </div>
+      <div class="container">
+        <div class="game">
+          <div class="boxes">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
