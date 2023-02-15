@@ -90,13 +90,11 @@ const swapClass = (e) => {
       Target.classList.add("circle");
       boxValue[Target.dataset.box] = lastClicked = "circle";
     }
-    console.log(rounds);
     swap = !swap;
     rounds >= 5 && checkGame();
     checkWinner();
     rounds++;
     if (rounds == 10 && winner == false) {
-      console.log("100");
       main.classList.add("overlay");
       modal.classList.remove("hidden");
       player.textContent = `No Winners , DRAW !`;
