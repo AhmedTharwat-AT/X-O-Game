@@ -14,7 +14,7 @@ const gameOver = document.querySelector(".new-game--container h1");
 let swap = false;
 let boxValue = {};
 let winner = false;
-let rounds = 0;
+let rounds = 1;
 let lastClicked;
 let xScore = 0;
 let oScore = 0;
@@ -46,13 +46,6 @@ const checkGame = () => {
     (boxValue[3] == boxValue[5] && boxValue[5] == boxValue[7])
   )
     winner = true;
-};
-
-// display score
-
-const displayScore = () => {
-  xBlock.textContent = `X : ${xScore}`;
-  oBlock.textContent = `O : ${oScore}`;
 };
 
 // check if round ended
@@ -97,12 +90,17 @@ const swapClass = (e) => {
       Target.classList.add("circle");
       boxValue[Target.dataset.box] = lastClicked = "circle";
     }
-
+    console.log(rounds);
     swap = !swap;
-    rounds++;
-    rounds >= 0 && checkGame();
+    rounds >= 5 && checkGame();
     checkWinner();
-    // displayScore();
+    rounds++;
+    if (rounds == 10 && winner == false) {
+      console.log("100");
+      main.classList.add("overlay");
+      modal.classList.remove("hidden");
+      player.textContent = `No Winners , DRAW !`;
+    }
   }
 };
 
@@ -117,7 +115,7 @@ const reset = () => {
   modal.classList.add("hidden");
   newGameBlock.classList.add("hidden");
   winner = false;
-  rounds = 0;
+  rounds = 1;
 };
 
 //new game
